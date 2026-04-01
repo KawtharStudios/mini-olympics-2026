@@ -7,9 +7,9 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/forms" element={<FormsPage />} />
+      <Route path="/forms/:eventSlug" element={<FormsPage />} />
+      <Route path="/forms" element={<Navigate to="/" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
-

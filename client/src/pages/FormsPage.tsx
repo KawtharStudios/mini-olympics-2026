@@ -1,44 +1,77 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import {
+  MINI_OLYMPICS_FORM_URL,
+  PING_PONG_FOOSBALL_FORM_URL,
+} from "../formUrls";
+
+const REDIRECT_BY_SLUG: Record<string, string> = {
+  "mini-olympics": MINI_OLYMPICS_FORM_URL,
+  "ping-pong-foosball": PING_PONG_FOOSBALL_FORM_URL,
+};
 
 export default function FormsPage() {
+  const { eventSlug } = useParams<{ eventSlug: string }>();
+  const targetUrl =
+    eventSlug && REDIRECT_BY_SLUG[eventSlug]
+      ? REDIRECT_BY_SLUG[eventSlug]
+      : null;
+
+  useEffect(() => {
+    if (targetUrl) {
+      window.location.replace(targetUrl);
+    }
+  }, [targetUrl]);
+
+  if (targetUrl) {
+    return (
+      <div className="page">
+        <header className="header">
+          <Link to="/" className="brand brand-link">
+            <span className="brand-badge" aria-hidden="true" />
+            <span>Shiane Haidery Events</span>
+          </Link>
+          <Link to="/" className="link-back">
+            Back to home
+          </Link>
+        </header>
+        <main className="forms">
+          <div className="container">
+            <p className="forms-lead" style={{ marginTop: "2rem" }}>
+              Redirecting to Google Forms…
+            </p>
+            <p className="forms-note">
+              If you are not redirected,{" "}
+              <a href={targetUrl}>open the registration form</a>.
+            </p>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="page">
       <header className="header">
-        <div className="brand" aria-label="Mini Olympics">
+        <Link to="/" className="brand brand-link">
           <span className="brand-badge" aria-hidden="true" />
-          <span>Mini Olympics</span>
-        </div>
+          <span>Shiane Haidery Events</span>
+        </Link>
         <Link to="/" className="link-back">
           Back to home
         </Link>
       </header>
-
-      <main>
-        <section className="forms">
-          <div className="container">
-            <h1 className="forms-title">Registration Form</h1>
-            <p className="forms-lead">
-              Placeholder page for your registration form. Wire up the real
-              fields and submission when you're ready.
-            </p>
-
-            <div className="forms-card" role="region" aria-label="Form placeholder">
-              <div className="placeholder-row" />
-              <div className="placeholder-row" />
-              <div className="placeholder-row placeholder-row--short" />
-              <div className="placeholder-row placeholder-row--short" />
-              <div className="placeholder-row" />
-
-              <div className="forms-note">
-                Tip: replace this placeholder block with a real form component
-                later (React Hook Form, Formik, or plain React state).
-              </div>
-            </div>
-          </div>
-        </section>
+      <main className="forms">
+        <div className="container">
+          <h1 className="forms-title">Form not found</h1>
+          <p className="forms-lead">
+            Choose an event from the home page and use its Register button.
+          </p>
+          <Link to="/" className="btn btn-primary">
+            Back to events
+          </Link>
+        </div>
       </main>
     </div>
   );
 }
-

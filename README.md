@@ -1,6 +1,6 @@
-# Mini Olympics (React + Node)
+# Shiane Haidery Events (React + Node)
 
-Responsive, poster-inspired landing page with a placeholder info section and a `/forms` route.
+Responsive landing page for **Mini Olympics** and **Ping Pong & Foosball**, with event-specific registration placeholders.
 
 ## Run (development)
 
@@ -21,8 +21,10 @@ Open the app at `http://localhost:3000/` (Express serves the built static files 
 
 ## Routes
 
-- `/` Landing page (includes the `Register` CTA)
-- `/forms` Placeholder forms page
+- `/` Landing page (two events, two CTAs each: register opens Google Forms + payment/deadline)
+- `/forms/mini-olympics` redirects to the [Mini Olympics Google Form](https://docs.google.com/forms/d/e/1FAIpQLSc-iPCXAJxtjUUL57VKBQMHEGqZIao8qcaLSgLzby3XC4RB8A/viewform)
+- `/forms/ping-pong-foosball` redirects to the [Ping Pong & Foosball Google Form](https://docs.google.com/forms/d/e/1FAIpQLSer1udq4tpmy6_3b0pDQ1QefoNQxLSO-5NRCmlf5FycJSB-hQ/viewform)
+- `/forms` redirects to `/`
 
 ## Deploy on Render (Static Site)
 
@@ -37,7 +39,7 @@ Render static sites host only the built frontend (no Node/Express runtime), so y
    - Destination Path: `/index.html`
    - Action: `Rewrite`
 
-This makes sure direct navigation to `/forms` serves the SPA entrypoint (`index.html`), so the client-side router can render the correct page.
+This makes sure direct navigation to nested paths (e.g. `/forms/mini-olympics`) serves the SPA entrypoint (`index.html`), so the client-side router can render the correct page.
 
 Docs:
 - https://docs.render.com/docs/static-sites

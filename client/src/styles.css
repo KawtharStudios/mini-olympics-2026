@@ -12,6 +12,13 @@
   --brand-gold: #f2b01e;
   --brand-gold-dark: #d08e0b;
 
+  --royal: #1a365d;
+  --royal-dark: #102a4a;
+  --tournament-orange: #ea580c;
+  --tournament-orange-dark: #c2410c;
+  --tournament-bg: #f0f7ff;
+  --tournament-bg-2: #e2eefc;
+
   --radius-xl: 24px;
   --radius-lg: 18px;
   --radius-md: 14px;
@@ -54,6 +61,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .brand {
@@ -62,6 +71,40 @@ body {
   gap: 10px;
   font-weight: 900;
   letter-spacing: 0.2px;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav-pill {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 30, 50, 0.14);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--brand-green-dark);
+}
+
+.nav-pill--accent {
+  color: var(--royal);
+  border-color: rgba(26, 54, 93, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.nav-pill--payment {
+  color: var(--text);
+  border-color: rgba(15, 30, 50, 0.12);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .brand-badge {
@@ -78,56 +121,274 @@ body {
   font-weight: 800;
 }
 
-.hero {
-  width: min(1100px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 36px 0 8px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.hero-text {
+.site-intro {
+  padding: 12px 0 32px;
+}
+
+.intro-eyebrow {
+  margin: 0 0 8px;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.intro-title {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.intro-lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 62ch;
+  font-size: 17px;
+}
+
+.deadline-banner {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(234, 88, 12, 0.1);
+  border: 1px solid rgba(234, 88, 12, 0.22);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.event-section {
+  padding: 40px 0 48px;
+  scroll-margin-top: 88px;
+}
+
+.event-section--olympics {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(215, 240, 255, 0.5)
+  );
+  border-top: 1px solid rgba(15, 30, 50, 0.06);
+}
+
+.event-section--tournament {
+  background: linear-gradient(
+    180deg,
+    var(--tournament-bg),
+    var(--tournament-bg-2)
+  );
+  border-top: 1px solid rgba(26, 54, 93, 0.1);
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.event-grid--reverse .event-copy {
+  order: 2;
+}
+
+.event-grid--reverse .event-poster-wrap {
+  order: 1;
+}
+
+.event-copy {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
-  padding: 26px 24px;
+  padding: 24px 22px;
 }
 
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(15, 30, 50, 0.08);
-  padding: 10px 14px;
-  border-radius: 999px;
+.event-section--tournament .event-copy {
+  border-color: rgba(26, 54, 93, 0.15);
 }
 
-.kicker-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--brand-green);
-  box-shadow: 0 10px 24px rgba(31, 138, 92, 0.25);
+.event-title {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.3px;
 }
 
-.hero-title {
-  margin: 14px 0 10px;
-  font-size: clamp(34px, 4.4vw, 52px);
-  line-height: 1.02;
-  letter-spacing: -0.7px;
-}
-
-.hero-subtitle {
+.event-tagline,
+.event-meta {
   margin: 0 0 18px;
   color: var(--muted);
-  font-size: 16px;
   line-height: 1.55;
-  max-width: 52ch;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.meta-item {
+  font-size: 15px;
+}
+
+.fee-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.fee-strip > div {
+  padding: 12px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(26, 54, 93, 0.08);
+  border: 1px solid rgba(26, 54, 93, 0.12);
+}
+
+.detail-block {
+  margin-bottom: 18px;
+}
+
+.detail-heading {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.detail-list,
+.games-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+.games-list {
+  padding-left: 1.35rem;
+}
+
+.detail-list li,
+.games-list li {
+  margin: 6px 0;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0 20px;
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(15, 30, 50, 0.14);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 30, 50, 0.22);
+}
+
+.btn-olympics-outline {
+  border-color: rgba(31, 138, 92, 0.35);
+  color: var(--brand-green-dark);
+}
+
+.btn-tournament-outline {
+  border-color: rgba(26, 54, 93, 0.28);
+  color: var(--royal);
+}
+
+.payment-card {
+  padding: 16px 14px;
+  border-radius: var(--radius-lg);
+  background: rgba(31, 138, 92, 0.08);
+  border: 1px solid rgba(31, 138, 92, 0.2);
+}
+
+.payment-section {
+  scroll-margin-top: 88px;
+  padding: 40px 0 48px;
+  border-top: 1px solid rgba(15, 30, 50, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.65),
+    rgba(234, 247, 255, 0.9)
+  );
+}
+
+.payment-section-title {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 3vw, 28px);
+  letter-spacing: -0.3px;
+}
+
+.payment-section-lead {
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 62ch;
+  font-size: 16px;
+}
+
+.payment-card--shared {
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 30, 50, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.payment-card--shared .payment-text a {
+  color: var(--brand-green-dark);
+}
+
+.payment-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.payment-text,
+.payment-note {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.payment-text a {
+  color: var(--brand-green-dark);
+  font-weight: 800;
+}
+
+.payment-note {
+  font-weight: 700;
+  color: rgba(11, 27, 43, 0.85);
+}
+
+.event-poster-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 20px;
+}
+
+.event-poster-wrap--tournament {
+  border-color: rgba(26, 54, 93, 0.15);
 }
 
 .btn {
@@ -157,62 +418,32 @@ body {
   box-shadow: 0 22px 48px rgba(31, 138, 92, 0.42);
 }
 
-.hero-media {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: var(--shadow);
+.btn-primary.btn-olympics {
+  background: linear-gradient(180deg, var(--brand-green), var(--brand-green-dark));
+  box-shadow: 0 18px 40px rgba(31, 138, 92, 0.35);
+}
+
+.btn-primary.btn-olympics:hover {
+  box-shadow: 0 22px 48px rgba(31, 138, 92, 0.42);
+}
+
+.btn-primary.btn-tournament {
+  background: linear-gradient(
+    180deg,
+    var(--tournament-orange),
+    var(--tournament-orange-dark)
+  );
+  box-shadow: 0 18px 40px rgba(234, 88, 12, 0.35);
+}
+
+.btn-primary.btn-tournament:hover {
+  box-shadow: 0 22px 48px rgba(234, 88, 12, 0.42);
 }
 
 .poster {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.info {
-  padding: 26px 0 38px;
-}
-
-.section-title {
-  margin: 0 0 10px;
-  font-size: 26px;
-  letter-spacing: -0.3px;
-}
-
-.section-lead {
-  margin: 0 0 18px;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 70ch;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.info-card {
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  padding: 16px 14px;
-  min-height: 140px;
-}
-
-.info-title {
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.info-text {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.55;
-  font-size: 14px;
 }
 
 .footer {
@@ -283,14 +514,17 @@ body {
 }
 
 @media (max-width: 920px) {
-  .hero {
+  .event-grid {
     grid-template-columns: 1fr;
-    padding-top: 22px;
   }
-  .hero-media {
-    order: 2;
+  .event-grid--reverse .event-copy,
+  .event-grid--reverse .event-poster-wrap {
+    order: unset;
   }
-  .info-grid {
+  .event-poster-wrap {
+    position: static;
+  }
+  .fee-strip {
     grid-template-columns: 1fr;
   }
 }
