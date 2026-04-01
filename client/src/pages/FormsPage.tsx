@@ -28,8 +28,10 @@ export default function FormsPage() {
       <div className="page">
         <header className="header">
           <Link to="/" className="brand brand-link">
-            <span className="brand-badge" aria-hidden="true" />
-            <span>Shiane Haidery Events</span>
+            <span className="brand-mark" aria-hidden="true">
+              <span className="brand-mark__gold" />
+            </span>
+            <span className="brand-text">Shiane Haidery</span>
           </Link>
           <Link to="/" className="link-back">
             Back to home
@@ -54,8 +56,10 @@ export default function FormsPage() {
     <div className="page">
       <header className="header">
         <Link to="/" className="brand brand-link">
-          <span className="brand-badge" aria-hidden="true" />
-          <span>Shiane Haidery Events</span>
+          <span className="brand-mark" aria-hidden="true">
+            <span className="brand-mark__gold" />
+          </span>
+          <span className="brand-text">Shiane Haidery</span>
         </Link>
         <Link to="/" className="link-back">
           Back to home
