@@ -713,10 +713,13 @@ body {
 
 .payment-split {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 260px), 1fr)
+  );
   gap: clamp(16px, 3vw, 24px);
   align-items: stretch;
-  max-width: 840px;
+  max-width: 1000px;
 }
 
 .payment-split-card-title {
@@ -753,6 +756,27 @@ body {
 
 .venue-card__list li {
   margin: 6px 0;
+}
+
+.when-card {
+  padding: 20px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(202, 138, 4, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border-top: 3px solid var(--olympic-gold-deep);
+}
+
+.when-card .venue-card__context {
+  margin-bottom: 10px;
+}
+
+.when-card__datetime {
+  margin: 0;
+  font-size: clamp(15px, 2.5vw, 17px);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text);
 }
 
 .payment-card {
@@ -919,10 +943,5 @@ body {
 
   .cta-row .btn {
     width: 100%;
-  }
-
-  .payment-split {
-    grid-template-columns: 1fr;
-    max-width: 100%;
   }
 }

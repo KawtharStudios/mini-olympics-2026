@@ -38,7 +38,10 @@ export default function LandingPage() {
           <a className="nav-pill nav-pill--olympics" href="#mini-olympics">
             Mini Olympics
           </a>
-          <a className="nav-pill nav-pill--tournament" href="#ping-pong-foosball">
+          <a
+            className="nav-pill nav-pill--tournament"
+            href="#ping-pong-foosball"
+          >
             Ping Pong & Foosball
           </a>
           <a className="nav-pill nav-pill--payment" href="#payment">
@@ -82,7 +85,9 @@ export default function LandingPage() {
                 <div className="detail-block">
                   <h3 className="detail-heading">Register</h3>
                   <ul className="detail-list">
-                    <li>Ages <strong>5–10</strong> on event day</li>
+                    <li>
+                      Ages <strong>5–10</strong> on event day
+                    </li>
                     <li>
                       <strong>One Google Form per child</strong>
                     </li>
@@ -145,10 +150,15 @@ export default function LandingPage() {
           <div className="container event-shell">
             <div className="event-grid event-grid--reverse">
               <div className="event-copy event-copy--tournament">
-                <h2 id="tournament-heading" className="event-title event-title--tournament">
+                <h2
+                  id="tournament-heading"
+                  className="event-title event-title--tournament"
+                >
                   Ping Pong & Foosball
                 </h2>
-                <p className="event-subtitle">Tournament · May 30 · Shiane Haidery</p>
+                <p className="event-subtitle">
+                  Tournament · May 30 · Shiane Haidery
+                </p>
 
                 <div className="fee-row">
                   <div className="fee-tile fee-tile--pp">
@@ -163,7 +173,10 @@ export default function LandingPage() {
 
                 <div className="detail-block">
                   <h3 className="detail-heading detail-heading--tournament">
-                    <span className="detail-icon detail-icon--pp" aria-hidden="true" />
+                    <span
+                      className="detail-icon detail-icon--pp"
+                      aria-hidden="true"
+                    />
                     Ping Pong · Individual
                   </h3>
                   <ul className="detail-list">
@@ -178,7 +191,10 @@ export default function LandingPage() {
 
                 <div className="detail-block">
                   <h3 className="detail-heading detail-heading--tournament">
-                    <span className="detail-icon detail-icon--fb" aria-hidden="true" />
+                    <span
+                      className="detail-icon detail-icon--fb"
+                      aria-hidden="true"
+                    />
                     Foosball · Teams of 2
                   </h3>
                   <ul className="detail-list">
@@ -186,7 +202,8 @@ export default function LandingPage() {
                       <strong>15+</strong> years
                     </li>
                     <li>
-                      One form includes <strong>both</strong> players&apos; names
+                      One form includes <strong>both</strong> players&apos;
+                      names
                     </li>
                   </ul>
                 </div>
@@ -194,10 +211,10 @@ export default function LandingPage() {
                 <div className="detail-block">
                   <h3 className="detail-heading">Notes</h3>
                   <ul className="detail-list">
-                    <li>Active <strong>WhatsApp</strong> for updates</li>
                     <li>
-                      One form per Ping Pong player or per Foosball team
+                      Active <strong>WhatsApp</strong> for updates
                     </li>
+                    <li>One form per Ping Pong player or per Foosball team</li>
                   </ul>
                 </div>
 
@@ -244,8 +261,9 @@ export default function LandingPage() {
               Payment
             </h2>
             <p className="payment-section-lead">
-              Same e-Transfer details for both events. Mini Olympics venue and
-              start time are in <strong>When & where</strong>.
+              Same e-Transfer details for both events. Mini Olympics{" "}
+              <strong>Where</strong> and <strong>When</strong> are in the cards
+              beside payment.
             </p>
             <div className="payment-split">
               <div className="payment-card payment-card--shared">
@@ -264,13 +282,17 @@ export default function LandingPage() {
                 <DeadlineBanner />
               </div>
               <div className="venue-card">
-                <h3 className="payment-split-card-title">When & where</h3>
-                <p className="venue-card__context">Mini Olympics</p>
+                <h3 className="payment-split-card-title">Where</h3>
                 <ul className="detail-list detail-list--plain venue-card__list">
                   <li>Shiane Haidery Islamic Association</li>
                   <li>2174 Belgrave Ave, Montreal, QC H4A 2L8</li>
-                  <li>Saturday, May 30, 2026 · 9:00 a.m.</li>
                 </ul>
+              </div>
+              <div className="when-card">
+                <h3 className="payment-split-card-title">When</h3>
+                <p className="when-card__datetime">
+                  Saturday, May 30, 2026 · 9:00 a.m.
+                </p>
               </div>
             </div>
           </div>
@@ -278,8 +300,8 @@ export default function LandingPage() {
 
         <footer className="footer">
           <div className="container footer-inner">
-            <span className="footer-brand">Shiane Haidery</span>
-            <span className="footer-muted">May 30, 2026</span>
+            <span className="footer-brand">Shiane Haidery Inc.</span>
+            <span className="footer-muted">Kawthar Studios</span>
           </div>
         </footer>
       </main>
